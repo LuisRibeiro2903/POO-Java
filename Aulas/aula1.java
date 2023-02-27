@@ -1,4 +1,8 @@
 import java.util.Scanner;
+
+//Barbaridades e má prática deve ser tolerado visto que esta é a minha primeira interação com java :)
+
+
 public class aula1
 {
     public static void main (String[] args)
@@ -25,11 +29,15 @@ public class aula1
         double taxaConversao = sc.nextDouble();
         double valor_final = f.eurosParaLibras(valor, taxaConversao);
         System.out.println("O valor em libras segundo a taxa de conversão fornecida é " + valor_final); */
-        System.out.println("Insira 2 números para a sua ordem decrescente tanto como a média dos dois: " );
+        /* System.out.println("Insira 2 números para a sua ordem decrescente tanto como a média dos dois: " );
         int a = sc.nextInt();
         int b = sc.nextInt();
         String output = f.ordemEMedia(a, b);
-        System.out.println(output);
+        System.out.println(output); */
+        System.out.println("Insira número para receber o seu fatorial: ");
+        int num = sc.nextInt();
+        long fact = f.factorial(num);
+        System.out.println(fact);
         sc.close();
         
     }
@@ -65,6 +73,19 @@ public class aula1
         {
             double media = (a + b) / 2.0;
             return (a > b) ? a + " > " + b + " Média : " + media : b + " > " + a + " Média : " + media;
+        }
+
+        //Pergunta 6
+        public long factorial(int num)
+        {
+            int a = num;
+            long fact = 1;
+            while(a > 1)
+            {
+                fact *= a;
+                a--;
+            }
+            return fact;
         }
     }
 }

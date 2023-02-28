@@ -1,3 +1,4 @@
+package Aula_1;
 import java.util.Scanner;
 
 //Barbaridades e má prática deve ser tolerado visto que esta é a minha primeira interação com java :)
@@ -36,6 +37,7 @@ public class aula1
         System.out.println(output); */
         System.out.println("Insira número para receber o seu fatorial: ");
         int num = sc.nextInt();
+        //FALTA RECEBER O NUMERO PELA MAIN !!!
         long fact = f.factorial(num);
         System.out.println(fact);
         sc.close();

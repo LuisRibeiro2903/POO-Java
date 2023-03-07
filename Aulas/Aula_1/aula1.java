@@ -1,4 +1,3 @@
-package Aula_1;
 import java.util.Scanner;
 
 //Barbaridades e má prática deve ser tolerado visto que esta é a minha primeira interação com java :)

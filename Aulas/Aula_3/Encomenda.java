@@ -152,5 +152,48 @@ public class Encomenda
 
     // Alínea (D)
 
+    public int numeroTotalProdutos ()
+    {
+        return this.getPos();
+    }
+
+    // Alínea (E)
+
+    public boolean existeProdutoEncomenda (String refProduto)
+    {
+        /*
+        Esta maneira funcionaria se o array de linhas estivesse ordenado pela referencia do produto
+        O que neste contexto não sei se é possível fazer, pois não sei se a ordem poderá ser alterada
+
+        int i = Arrays.binarySearch(this.linhas, refProduto);  
+
+        (i < 0) ? return false : return true;
+        */
+
+        for (int i = 0; i < this.pos; i++)
+        {
+            if (this.linhas[i].getReferencia() == refProduto)
+                return true;
+        }
+        return false;
+    }
+
+    // Alínea (F)
     
+    public void adicionaLinha (LinhaEncomenda linha)
+    {
+        int length1 = this.linhas.length;
+        if (this.pos > length1)
+        {
+            int i;
+            LinhaEncomenda novo[] = new LinhaEncomenda[length1 * 2];
+            for (i = 0; i < length1; i++)
+                novo[i] = this.linhas[i].clone();
+            novo[i] = linha.clone();
+            this.pos++;
+        }
+        else
+            this.linhas[this.pos++] = linha.clone();
+        
+    }
 }

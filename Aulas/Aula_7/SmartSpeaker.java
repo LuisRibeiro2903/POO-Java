@@ -20,7 +20,8 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class SmartSpeaker extends SmartDevice {
+public class SmartSpeaker extends SmartDevice 
+{
     public static final int MAX = 20; //volume máximo
     
     private int volume;
@@ -30,35 +31,56 @@ public class SmartSpeaker extends SmartDevice {
     /**
      * Constructor for objects of class SmartSpeaker
      */
-    public SmartSpeaker() {
+    public SmartSpeaker() 
+    {
         // initialise instance variables
+        super();
         this.volume = 10;
+        this.channel = "";
     }
 
-    public SmartSpeaker(String s) {
+    public SmartSpeaker(String s) 
+    {
         // initialise instance variables
+        super();
         this.volume = 10;
+        this.channel = s;
     }
 
 
 
-    public SmartSpeaker(String cod, String channel, int i) {
+    public SmartSpeaker(String cod, String channel, int i) 
+    {
         // initialise instance variables
-        this.volume = 10;
+        super(cod);
+        this.volume = i;
+        this.channel = channel;
+
     }
 
-    public void volumeUp() {
+    public void volumeUp() 
+    {
         if (this.volume<MAX) this.volume++;
     }
 
-    public void volumeDown() {
+    public void volumeDown() 
+    {
         if (this.volume>0) this.volume--;
     }
 
-    public int getVolume() {return 0;}
+    public int getVolume() 
+    {
+        return this.volume;
+    }
     
-    public String getChannel() {return "";}
+    public String getChannel() 
+    {
+        return this.channel;
+    }
     
-    public void setChannel(String c) {}
+    public void setChannel(String c) 
+    {
+        this.channel = c;
+    }
 
 }

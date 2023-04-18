@@ -13,6 +13,7 @@
 
 import java.util.Map;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -32,14 +33,16 @@ public class CasaInteligente {
     /**
      * Constructor for objects of class CasaInteligente
      */
-    public CasaInteligente() {
+    public CasaInteligente() 
+    {
         // initialise instance variables
         this.morada = "";
         this.devices = new HashMap<>();
         this.locations = new HashMap<>();
     }
 
-    public CasaInteligente(String morada) {
+    public CasaInteligente(String morada) 
+    {
         // initialise instance variables
         this.morada = morada;
         this.devices = new HashMap<>();
@@ -54,11 +57,11 @@ public class CasaInteligente {
     
     public boolean existsDevice(String id) 
     {
-        if (this.devices.get(id) == null)
+        if (this.devices.containsKey(id))
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     
     public void addDevice(SmartDevice s) 
@@ -85,13 +88,29 @@ public class CasaInteligente {
     
     public void addRoom(String s) 
     {
-        
+        List<String> e = new ArrayList<>();
+        this.locations.put(s, e);
     }
     
-    public boolean hasRoom(String s) {return false;}
+    public boolean hasRoom(String s) 
+    {
+        if(this.locations.containsKey(s))
+        {
+            return true;
+        }
+        return false;
+    }
     
-    public void addToRoom (String s1, String s2) {}
+    public void addToRoom (String s1, String s2) 
+    {
+        this.locations.get(s1).add(s2);
+    }
     
-    public boolean roomHasDevice (String s1, String s2) {return false;}
+    public boolean roomHasDevice (String s1, String s2) 
+    {
+        if (this.locations.get(s1).contains(s2))
+            return true;
+        return false;
+    }
     
 }

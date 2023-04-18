@@ -19,7 +19,8 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class SmartBulb extends SmartDevice {
+public class SmartBulb extends SmartDevice 
+{
     public static final int WARM = 2;
     public static final int NEUTRAL = 1;
     public static final int COLD = 0;
@@ -29,31 +30,36 @@ public class SmartBulb extends SmartDevice {
     /**
      * Constructor for objects of class SmartBulb
      */
-    public SmartBulb() {
+    public SmartBulb() 
+    {
         // initialise instance variables
         super();
         this.tone = NEUTRAL;
     }
 
-    public SmartBulb(String id, int tone) {
+    public SmartBulb(String id, int tone) 
+    {
         // initialise instance variables
         super(id);
         this.tone = tone;
     }
 
-    public SmartBulb(String id) {
+    public SmartBulb(String id) 
+    {
         // initialise instance variables
         super(id);
         this.tone = NEUTRAL;
     }
 
-    public void setTone(int t) {
+    public void setTone(int t) 
+    {
         if (t>WARM) this.tone = WARM;
         else if (t<COLD) this.tone = COLD;
         else this.tone = t;
     }
 
-    public int getTone() {
+    public int getTone() 
+    {
         return this.tone;
     }
 

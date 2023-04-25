@@ -5,7 +5,8 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
-public class Utilizador {
+public class Utilizador 
+{
     
     private String email;
     private String password;
@@ -44,102 +45,127 @@ public class Utilizador {
     }
 
 
-    public String getEmail() {
+    public String getEmail() 
+    {
         return email;
     }
 
 
-    public void setEmail(String email) {
+    public void setEmail(String email) 
+    {
         this.email = email;
     }
 
 
-    public String getPassword() {
+    public String getPassword() 
+    {
         return password;
     }
 
 
-    public void setPassword(String password) {
+    public void setPassword(String password) 
+    {
         this.password = password;
     }
 
 
-    public String getNome() {
+    public String getNome() 
+    {
         return nome;
     }
 
 
-    public void setNome(String nome) {
+    public void setNome(String nome) 
+    {
         this.nome = nome;
     }
 
 
-    public Character getGenero() {
+    public Character getGenero() 
+    {
         return genero;
     }
 
 
-    public void setGenero(Character genero) {
+    public void setGenero(Character genero) 
+    {
         this.genero = genero;
     }
 
 
-    public short getAltura() {
+    public short getAltura() 
+    {
         return altura;
     }
 
 
-    public void setAltura(short altura) {
+    public void setAltura(short altura) 
+    {
         this.altura = altura;
     }
 
 
-    public Double getPeso() {
+    public Double getPeso() 
+    {
         return peso;
     }
 
 
-    public void setPeso(Double peso) {
+    public void setPeso(Double peso) 
+    {
         this.peso = peso;
     }
 
 
-    public LocalDate getDataNascimento() {
+    public LocalDate getDataNascimento() 
+    {
         return dataNascimento;
     }
 
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) 
+    {
         this.dataNascimento = dataNascimento;
     }
 
 
-    public LocalDate getDataRegisto() {
+    public LocalDate getDataRegisto() 
+    {
         return dataRegisto;
     }
 
 
-    public void setDataRegisto(LocalDate dataRegisto) {
+    public void setDataRegisto(LocalDate dataRegisto) 
+    {
         this.dataRegisto = dataRegisto;
     }
 
 
-    public Atividade getDesportoFavorito() {
+    public Atividade getDesportoFavorito() 
+    {
         return desportoFavorito;
     }
 
 
-    public void setDesportoFavorito(Atividade desportoFavorito) {
+    public void setDesportoFavorito(Atividade desportoFavorito) 
+    {
         this.desportoFavorito = desportoFavorito;
     }
 
 
-    public Set<Atividade> getAtividades() {
+    public Set<Atividade> getAtividades() 
+    {
         return atividades;
     }
 
 
-    public void setAtividades(Set<Atividade> atividades) {
+    public void setAtividades(Set<Atividade> atividades) 
+    {
         this.atividades = atividades;
+    }
+
+    public void adicionaAtividade (Atividade ativ)
+    {
+        this.atividades.add(ativ.clone());
     }
 }
